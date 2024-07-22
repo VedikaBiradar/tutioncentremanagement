@@ -3,14 +3,13 @@
 
 
     import com.vedikabiradar.sba_html_css_js.Dto.UserDto;
-    import com.vedikabiradar.sba_html_css_js.Entity.Child;
+    import com.vedikabiradar.sba_html_css_js.Entity.Student;
     import com.vedikabiradar.sba_html_css_js.Entity.User;
-    import com.vedikabiradar.sba_html_css_js.Service.ChildService;
+    import com.vedikabiradar.sba_html_css_js.Service.StudentService;
     import com.vedikabiradar.sba_html_css_js.Service.UserService;
     import jakarta.validation.Valid;
     import org.springframework.beans.factory.annotation.Autowired;
     import org.springframework.stereotype.Controller;
-    import org.springframework.transaction.annotation.Transactional;
     import org.springframework.ui.Model;
     import org.springframework.validation.BindingResult;
     import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +26,7 @@
         private UserService userService;
 
         @Autowired
-        private ChildService childService;
+        private StudentService studentService;
 
         @Autowired
         public AuthorizeController(UserService userService) {
@@ -84,24 +83,24 @@
             return "parentDashboard";  // Ensure you have this template
         }
 
-        @GetMapping("/childInfo")
+        @GetMapping("/studentInfo")
         public String showParentInfoForm(Model model) {
             model.addAttribute("email", "");
-            return "childInfo";
+            return "studentInfo";
         }
 
 
-        @PostMapping("/childInfo")
+        @PostMapping("/studentInfo")
         public String getParentInfo(@RequestParam("email") String email, Model model) {
             User user = userService.findByEmail(email);
             if (user != null) {
-                List<Child> children = childService.findByUser(user);
-                model.addAttribute("children", children);
+                List<Student> students = studentService.findByUser(user);
+                model.addAttribute("student", students);
             } else {
                 model.addAttribute("error", "No parent found with the provided email.");
             }
             model.addAttribute("email", email);
-            return "childInfo";
+            return "studentInfo";
         }
 
         @GetMapping("/deleteParent")

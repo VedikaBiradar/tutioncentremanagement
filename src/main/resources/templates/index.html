@@ -77,7 +77,7 @@
             <li><a th:href="@{/contact}">Contact Us</a></li>
             <li><a th:href="@{/userRegistration}">Registration</a></li>
             <li><a th:href="@{/login}">Login</a></li>
-            <li><a th:href="@{/childRegister}">Register Student/Child</a></li>
+            <li><a th:href="@{/studentRegister}">Register Student</a></li>
 
         </ul>
     </nav>
@@ -116,18 +116,6 @@
         <u>Check Eligibility Fee & Subjects</u>
     </a>
 </p>
-
-<section>
-    <!-- Heading for the newsletter signup form -->
-    <form id="newsletter-form" th:action="@{/emailSubscription}" th:object="${emailSubscription}" method="post">
-        <label for="newsletter-email" > Subscribe Us: Please Enter Valid Email:</label> <!-- Label for the email input field -->
-        <input type="email" id="newsletter-email" name="email" th:field="*{emailAddress}" required> <!-- Input field for the email, required for submission -->
-        <button id="id-subscribe" type="submit">Subscribe</button> <!-- Submit button for the form -->
-    </form>
-    <div th:if="${param.success}">
-        <p>Thank you for Subscribing us. </p>
-    </div>
-</section>
 
 </div>
 

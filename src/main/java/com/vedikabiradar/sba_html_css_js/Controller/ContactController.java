@@ -37,10 +37,10 @@ public class ContactController {
         return "displayallconatctus";
     }
 
-//    @GetMapping("/index")
-//    public String showIndexForm(Model model) {
-//        return "index";
-//    }
+    @GetMapping("/index")
+    public String showIndexForm(Model model) {
+        return "index";
+    }
 
     @GetMapping("/about")
     public String showAboutus(Model model) {

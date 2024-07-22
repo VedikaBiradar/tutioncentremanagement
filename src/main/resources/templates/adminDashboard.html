@@ -53,16 +53,16 @@
 <div class="container">
 
     <div class="card">
-        <h2>Add New Student/ Child:</h2>
-        <a href="childRegistration.html"   th:href="@{/childRegister}" >Child/Student Registration</a>
+        <h2>Add New Student:</h2>
+        <a href="studentRegistration.html"   th:href="@{/studentRegister}" >Student Registration</a>
     </div>
     <div class="card">
         <h2>Add New Parent:</h2>
         <a href="userRegistration"   th:href="@{/userRegistration}" >Parent Registration</a>
     </div>
     <div class="card">
-        <h2>See All Registered Students/ Children's:</h2>
-        <a href="registeredChildren.html"   th:href="@{/registeredChildren/list}" >Children's List</a>
+        <h2>See All Registered Students:</h2>
+        <a href="registeredStudents.html"   th:href="@{/registeredStudent/list}" >Students List</a>
     </div>
     <div class="card">
         <h2>See All Registered Parents And Users:</h2>
@@ -78,13 +78,23 @@
     </div>
 
     <div class="card">
-        <h2>Delete Child:</h2>
-        <a href="deleteChild.html"   th:href="@{/deleteChild}" >Delete Child</a>
+        <h2>Delete Student:</h2>
+        <a href="deleteStudent.html"   th:href="@{/deleteStudent}" >Delete Student</a>
     </div>
 
     <div class="card">
         <h2>Delete Parent:</h2>
         <a href="deleteParent.html"   th:href="@{/deleteParent}" >Delete Parent</a>
+    </div>
+
+    <div class="card">
+        <h2>Add Subects information to Standard:</h2>
+        <a href="standardSubject.html"   th:href="@{/standardSubject}" > Standard Subject</a>
+    </div>
+
+    <div class="card">
+        <h2>See Subects information:</h2>
+        <a href="displayAllStandardSubjects.html"   th:href="@{/standardSubject/list}" > Standard Subject Info</a>
     </div>
 
 </div>

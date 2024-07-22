@@ -54,8 +54,8 @@
 <div class="container">
 
     <div class="card">
-        <h2>Add Student/ Add your Child:</h2>
-        <a href="childRegistration.html"   th:href="@{/childRegister}" >Registration</a>
+        <h2>Add Student:</h2>
+        <a href="studentRegistration.html" th:href="@{/studentRegister}" >Registration</a>
     </div>
 
     <div class="card">
@@ -63,9 +63,15 @@
         <a href="userinfo.html"   th:href="@{/userinfo}" >see your info</a>
     </div>
     <div class="card">
-        <h2>See Your Child Information:</h2>
-        <a href="childInfo.html"   th:href="@{/childInfo}" >see your child information</a>
+        <h2>See Your  Student Information:</h2>
+        <a href="studentInfo.html" th:href="@{/studentInfo}" >see your student information</a>
     </div>
+
+    <div class="card">
+        <h2>See Subects information:</h2>
+        <a href="displayAllStandardSubjects.html"   th:href="@{/standardSubject/list}" > Standard Subject Info</a>
+    </div>
+
 </div>
 </body>
 </html>

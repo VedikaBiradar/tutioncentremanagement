@@ -105,13 +105,16 @@ public class SpringSecurity {
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/userRegistration","/userRegistration/save").permitAll()
                         .requestMatchers("/index").permitAll()
-                        .requestMatchers("/registeredUsers","/adminDashboard","/deleteChild","/deleteParent").hasRole( "ADMIN")
-                        .requestMatchers("/parentDashboard","/userinfo","/childInfo").hasAnyRole("PARENT")
+                        .requestMatchers("/registeredUsers","/adminDashboard","/deleteStudent","/deleteParent").hasRole( "ADMIN")
+                        .requestMatchers("/parentDashboard","/userinfo","/studentInfo").hasAnyRole("PARENT")
                         .requestMatchers("/static/css/**","/static/images/**","/static/JS/**","/static/**").permitAll()
                         .requestMatchers("/contact").permitAll()
                         .requestMatchers("/about").permitAll()
                         .requestMatchers("/login").permitAll()
+                        .requestMatchers("/standardSubject").hasRole("ADMIN")
+                        .requestMatchers("/standardSubject/list").permitAll()
                         .anyRequest().authenticated()
+
                 )
                 .formLogin(form -> form
                         .loginPage("/login")

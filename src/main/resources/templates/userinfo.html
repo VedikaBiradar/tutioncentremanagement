@@ -32,11 +32,11 @@
             <p><strong>Country:</strong> <span th:text="${user.country}"></span></p>
             <p><strong>ZIP:</strong> <span th:text="${user.zip}"></span></p>
         </div>
-        <div th:if="${user.children != null && !user.children.isEmpty()}" class="info">
+        <div th:if="${user.students != null && !user.students.isEmpty()}" class="info">
             <h2> your Child/Children's Info</h2>
             <ul>
-                <li th:each="child : ${user.children}">
-                    <span th:text="${child.childName}"></span>
+                <li th:each="student : ${user.students}">
+                    <span th:text="${student.childName}"></span>
                 </li>
             </ul>
         </div>

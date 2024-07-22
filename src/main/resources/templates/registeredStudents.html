@@ -29,9 +29,7 @@
             background-color: lightseagreen;
             color: white;
         }
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
+
         tr:hover {
             background-color: #f1f1f1;
         }
@@ -48,31 +46,31 @@
 </head>
 <body>
 <div class="navbar">
-    <p> Child and Children's List</p>
+    <p> Students List</p>
 </div>
 <table>
     <thead>
     <tr>
-        <th>Student/Child Id</th>
+        <th>Student Id</th>
         <th>Student Name</th>
         <th>Age</th>
-        <th>Photo URL</th>
-        <th>Medical Info</th>
+        <th>Blood Group</th>
+        <th>DaysPerWeek</th>
         <th>Parent Id</th>
         <th>Gender</th>
         <th> Student Standard/Class</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="child : ${children}">
-        <td th:text="${child.getChildId()}"></td>
-        <td th:text="${child.childName}"></td>
-        <td th:text="${child.getAge}"></td>
-        <td th:text="${child.photoUrl}"></td>
-        <td th:text="${child.medicalInfo}"></td>
-        <td th:text="${child.user.id}"></td>
-        <td th:text="${child.gender}"></td>
-        <td th:text="${child.standard}"></td>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.getStudentId()}"></td>
+        <td th:text="${student.studentName}"></td>
+        <td th:text="${student.getAge}"></td>
+        <td th:text="${student.bloodGroup}"></td>
+        <td th:text="${student.daysPerWeek}"></td>
+        <td th:text="${student.user.id}"></td>
+        <td th:text="${student.gender}"></td>
+        <td th:text="${student.standard}"></td>
     </tr>
     </tbody>
 </table>

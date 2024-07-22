@@ -13,14 +13,14 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @ToString
 @Entity
-public class Child {
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long childId;
-    private String childName;
+    private Long studentId;
+    private String studentName;
     private LocalDate dob;
-    private String medicalInfo;
-    private String photoUrl;
+    private String bloodGroup;
+    private int daysPerWeek;
     private String gender;
     private String standard;
 
